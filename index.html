@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="app">
+        <div class="calculator">
+            <input @keyup.enter="calc" class="calculator__input" type="text" v-model="result" placeholder="0">
+            <button @click="input(num)" class="calculator__button-num cell" v-for="num in numbers">{{num}}</button>
+            <button @click="input(item)" class="calculator__button-oper cell" v-for="item in operations">{{item}}</button>
+            <button @click="reset" class="calculator__button-oper cell">reset</button>
+            <button @click="calc" class="calculator__button-oper cell">=</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
